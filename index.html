@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Drawing</title>
+    <title>Random Drawing SVG</title>
 </head>
 <body>
     
     <div>
+        
         <div>
             <span>畫布大小:</span>
             <span>width:</span>
@@ -19,35 +20,38 @@
 
         <div>
             <span>圖像類型:</span>
-            <select name="type" id="type" onchange="">
+            <select name="type" id="type" onchange="showParameters();">
                 <option value="">-請選擇-</option>
                 <option value="circle">圓形</option>
                 <option value="polygon">多邊形</option>
             </select>
         </div>
-        
+
+        <div>
+            <div id="circle_config" style="display: none;">
+                <span>圓心座標:</span>
+                <span>X:</span>
+                <input type="number" name="cx" id="cx">
+                <span>Y:</span>
+                <input type="number" name="cy" id="cy">
+                <span>半徑:</span>
+                <input type="number" name="r" id="r">
+            </div>
+            <div id="polygon_config" style="display: none;">
+                <span>邊數:</span>
+                <input type="number" name="side" id="side">
+            </div>    
+        </div>
+
         <div>
             <button onclick="create();">產生圖形</button>
-        </div>        
-
+        </div>
         
     </div>
 
-    <div id="canvas">
+    <div id="canvas"></div>
 
-    </div>
-
-    <script>
-
-        function create() {
-            let canvas = document.getElementById('canvas');
-            
-            let type = document.getElementById('type').value;
-            if(!type) alert('請先選擇圖像類型');
-            console.log(type);
-        }
-
-    </script>
+    <script src="/src/index.js"></script>
 
 </body>
 </html>
