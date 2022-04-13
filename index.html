@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Drawing</title>
+</head>
+<body>
+    
+    <div>
+        <div>
+            <span>畫布大小:</span>
+            <span>width:</span>
+            <input type="number" name="width" id="width">
+            <span>height:</span>
+            <input type="number" name="height" id="height">
+        </div>
+
+        <div>
+            <span>圖像類型:</span>
+            <select name="type" id="type" onchange="">
+                <option value="">-請選擇-</option>
+                <option value="circle">圓形</option>
+                <option value="polygon">多邊形</option>
+            </select>
+        </div>
+        
+        <div>
+            <button onclick="create();">產生圖形</button>
+        </div>        
+
+        
+    </div>
+
+    <div id="canvas">
+
+    </div>
+
+    <script>
+
+        function create() {
+            let canvas = document.getElementById('canvas');
+            
+            let type = document.getElementById('type').value;
+            if(!type) alert('請先選擇圖像類型');
+            console.log(type);
+        }
+
+    </script>
+
+</body>
+</html>
