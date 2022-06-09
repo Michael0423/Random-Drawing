@@ -13,9 +13,10 @@
         <div>
             <span>畫布大小:</span>
             <span>width:</span>
-            <input type="number" name="width" id="width">
+            <input type="number" name="width" id="width" value="500">
             <span>height:</span>
-            <input type="number" name="height" id="height">
+            <input type="number" name="height" id="height" value="500">
+            <button onclick="changeSVGSize();">調整畫布大小</button>
         </div>
 
         <div>
@@ -23,7 +24,7 @@
             <select name="type" id="type" onchange="showParameters();">
                 <option value="">-請選擇-</option>
                 <option value="circle">圓形</option>
-                <option value="polygon">多邊形</option>
+                <!-- <option value="polygon">多邊形</option> -->
             </select>
         </div>
 
@@ -36,6 +37,8 @@
                 <input type="number" name="cy" id="cy">
                 <span>半徑:</span>
                 <input type="number" name="r" id="r">
+                <span>顏色:</span>
+                <input type="color" name="color" id="color">
             </div>
             <div id="polygon_config" style="display: none;">
                 <span>邊數:</span>
@@ -49,7 +52,9 @@
         
     </div>
 
-    <div id="canvas"></div>
+    <div id="canvas">
+        <svg id="svg" width="500" height="500" style="border: 1px solid;"></svg>
+    </div>
 
     <script src="/src/index.js"></script>
 
